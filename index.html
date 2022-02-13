@@ -7,17 +7,37 @@
   <title>Document</title>
 </head>
 <body>
-  <span>Total clicks : 0</span>
-  <button id="btn">Click me</button>
-  <script>
-    let counter = 0;
-    const button = document.getElementById("btn");
-    const span = document.querySelector("span");
-    function handleClick() {
-      counter += 1;
-      span.innerText = `Total clicks : ${counter}`;
-    }
-    button.addEventListener("click", handleClick);
-  </script>
+  <div id="root"></div>
 </body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  // root
+  const root = document.getElementById("root");
+  // counter value
+  let counter = 0;
+  // countUp function
+  function countUp() {
+    counter += 1; // counter + 1;
+    // counter event
+    render();
+  }
+  // rendering fucntion
+  function render() {
+    // render(eventUp counter)
+    ReactDOM.render(<Container/>, root);
+  }
+  // Container
+  function Container() {
+    return (
+      <div>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={countUp}>Click me</button>
+      </div>
+    );
+  }
+  // render
+  render();
+</script>
 </html>
