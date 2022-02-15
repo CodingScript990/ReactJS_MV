@@ -11,6 +11,7 @@
 </body>
 <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
   // counter value
@@ -33,6 +34,7 @@
  */
  // useState
   // MinutesToHours function
+  /*
   function MinutesToHours() {
     // State(counter, setCounter)
     //const [counter, setCounter] = React.useState(0);
@@ -82,29 +84,45 @@
   function KmToMiles() {
     return <h3>KM 3 M</h3>;
   }
+  */
+  // button function
+  function Btn({banana, fontSize}) { // {props}
+    // style
+    return (
+        <button
+        //onClick={onClick}
+        style={{
+          backgroundColor : "tomato",
+          color: "#ffffff",
+          padding: "10px 20px",
+          border : 0,
+          borderRadius : 10,
+          fontSize,
+          }}>
+          {banana}
+        </button>
+    );
+  }
+
+  // prop Types
+  Btn.propTypes = {
+    banana: PropTypes.string.isRequired,
+    fontSize: PropTypes.number,
+  };
+
+  // memorized button => memo(Btn)
+  //const MemorizedBtn = React.memo(Btn);
+
   // App
   function App() {
-    // index State
-    const [index, setIndex] = React.useState("xx");
-    // onChange select event
-    const onSelect = e => {
-      // index event value
-      setIndex(e.target.value);
-    };
-    // check index
-    console.log("render w/", index);
+    // memo[useState]
+    //const [value, setValue] = React.useState("Save Changes");
+    // changeValue[setValue]
+    //const changeValue = () => setValue("Revert Changes");
     return (
       <div>
-        <h1 className="hi">Super Converter</h1>
-        <select value={index} onChange={onSelect}>
-          <option value="xx">Select your units</option>
-          <option value="0">Mintues & Hours</option>
-          <option value="1">Km & Miles</option>
-        </select>
-        <hr />
-        {index === "xx" ? "Please select your units" : null }
-        {index === "0" ? <MinutesToHours /> : null }
-        {index === "1" ? <KmToMiles /> : null }
+        <Btn banana="Save Changes" fontSize={18} />
+        <Btn banana="Continue" />
       </div>
     );
   }
