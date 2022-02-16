@@ -1,11 +1,11 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import ToDoList from "./components/ToDoList";
+// import ToDoList from "./components/ToDoList";
 
 function App() {
   return (
     <div>
-      <h1 className={styles.title}>Welcome back!</h1>
-      <Button text="click me" />
+      {/* <Test /> */}
+      <ToDoList />
     </div>
   );
 }
