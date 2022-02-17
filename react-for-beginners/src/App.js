@@ -1,11 +1,11 @@
-import ToDoList from "./components/ToDoList";
-// import ToDoList from "./components/ToDoList";
+import Movie from "./components/Movie";
+import { useEffect, useState } from "react";
+import Home from "./routes/Home";
 
 function App() {
   return (
     <div>
-      {/* <Test /> */}
-      <ToDoList />
+      <Home />
     </div>
   );
 }

@@ -47,6 +47,7 @@ function Test() {
     if (text === "" || text === null) {
       return;
     }
+    // not null(text value)
     if (text !== "") {
       setComment((currentArray) => [
         ...currentArray,
@@ -58,6 +59,7 @@ function Test() {
         )),
       ]);
     }
+    // null Text
     setText("");
   };
 
