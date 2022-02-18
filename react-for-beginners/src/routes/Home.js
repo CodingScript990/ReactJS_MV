@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import styles from "./Home.module.css";
 
 // router /Home
 function Home() {
@@ -11,9 +12,7 @@ function Home() {
   const getMovies = async () => {
     // response api(movie.json)
     const json = await (
-      await fetch(
-        `https://yts.mx/api/v2/list_movies.json?limit=20&genre=action`
-      )
+      await fetch(`https://yts.mx/api/v2/list_movies.json?limit=20`)
     ).json();
     // json type api moviList(info)
     setMovies(json.data.movies);
@@ -25,15 +24,25 @@ function Home() {
     getMovies();
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
+      <div className={styles.title}>
+        <h1>R.MX</h1>
+      </div>
+      <div className={styles.movies}>
+        <span>영화 : {movies.length}</span>
+      </div>
       {loading ? (
-        <h1>Loding...</h1>
+        <div className={styles.loader}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       ) : (
-        <div>
-          <div>영화 : ({movies.length})</div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
@@ -42,9 +51,6 @@ function Home() {
           ))}
         </div>
       )}
-      {/* <Test /> */}
-      {/* <ToDoList /> */}
-      {/* <Loading /> */}
     </div>
   );
 }

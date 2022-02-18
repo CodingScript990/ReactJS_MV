@@ -1,17 +1,24 @@
 import React from "react";
 import PropsTypes from "prop-types";
+import { Link } from "react-router-dom";
+import styles from "./Movie.moudle.css";
 
 // rendering
-function Movie({ coverImg, title, summary, genres }) {
+function Movie({ id, coverImg, title, year, summary, genres }) {
   // props
   return (
-    <div>
-      <img src={coverImg} alt={title} />
-      <h2>영화제목 : {title}</h2>
-      <p>영화 줄거리 : {summary}</p>
-      <ul>
+    <div className={styles.movie}>
+      <img src={coverImg} alt={title} className={styles.movie_img} />
+      <div>
+        <h2 className={styles.movie_title}>
+          <Link to={`/movie/${id}`}>{title}</Link>
+        </h2>
+        <h3 className={styles.movie_year}>{year}</h3>
+      </div>
+      <p>{summary.length > 120 ? `${summary.slice(0, 120)}...` : summary}</p>
+      <ul className={styles.movie_genres}>
         {genres.map((g) => (
-          <li key={g}>장르 : {g}</li>
+          <li key={g}>{g}</li>
         ))}
       </ul>
     </div>
@@ -20,6 +27,7 @@ function Movie({ coverImg, title, summary, genres }) {
 
 // movie props types obj
 Movie.propsTypes = {
+  id: PropsTypes.number.isRequired,
   coverImg: PropsTypes.string.isRequired,
   title: PropsTypes.string.isRequired,
   summary: PropsTypes.string.isRequired,
