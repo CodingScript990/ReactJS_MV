@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import Movie from "./Movie";
 import styles from "./Home.module.css";
 
 // router /Home
@@ -29,7 +29,8 @@ function Home() {
         <h1>R.MX</h1>
       </div>
       <div className={styles.movies}>
-        <span>영화 : {movies.length}</span>
+        <span className={styles.movies_length}>영화 : {movies.length}</span>
+        <input type="text" placeholder="searching.." />
       </div>
       {loading ? (
         <div className={styles.loader}>
@@ -47,6 +48,7 @@ function Home() {
               title={movie.title}
               summary={movie.summary}
               genres={movie.genres}
+              year={movie.year}
             />
           ))}
         </div>
