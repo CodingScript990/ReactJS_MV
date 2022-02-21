@@ -42,6 +42,7 @@ Movie.propsTypes = {
   coverImg: PropsTypes.string.isRequired,
   title: PropsTypes.string.isRequired,
   summary: PropsTypes.string.isRequired,
+  year: PropsTypes.number.isRequired,
   genres: PropsTypes.arrayOf(PropsTypes.string).isRequired,
 };
 

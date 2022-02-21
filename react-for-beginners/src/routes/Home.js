@@ -12,7 +12,7 @@ function Home() {
   const getMovies = async () => {
     // response api(movie.json)
     const json = await (
-      await fetch(`https://yts.mx/api/v2/list_movies.json?limit=20`)
+      await fetch(`https://yts.mx/api/v2/list_movies.json?limit=30&genre=all`)
     ).json();
     // json type api moviList(info)
     setMovies(json.data.movies);
@@ -28,9 +28,9 @@ function Home() {
       <div className={styles.title}>
         <h1>R.MX</h1>
       </div>
-      <div className={styles.movies}>
+      <div className={styles.movies_info}>
         <span className={styles.movies_length}>영화 : {movies.length}</span>
-        <input type="text" placeholder="searching.." />
+        <input type="search" placeholder="searching.." />
       </div>
       {loading ? (
         <div className={styles.loader}>

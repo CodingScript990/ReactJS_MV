@@ -25,25 +25,15 @@
   font-size: 42px;
   color: #5e5243;
   font-family: 'Pacifico', cursive;
+  cursor: default;
+  margin: 5px;
+}
+
+.title a {
+  text-decoration: none;
 }
 
 /* End of Title */
-
-/* movies length */
-.movies_length {
-  font-size: 21px;
-  font-weight: bold;
-  text-align: left;
-  color: #ffffff;
-}
-
-/* End of movies length */
-
-/* searching */
-input {
-  width: 300px;
-}
-/* End of searching */
 
 /* Loading */
 .loader {
@@ -96,6 +86,39 @@ input {
   border-radius: 7px;
   margin-bottom: 10px;
 }
+
+/*  */
+.movies_info {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+/* movies length */
+.movies_length {
+  font-size: 21px;
+  font-weight: bold;
+  color: #5e5243;
+}
+
+/* End of movies length */
+
+/* searching */
+input {
+  width: 300px;
+  border: 2px solid #5e5243;
+  border-radius: 5px;
+  outline: none;
+}
+
+input::placeholder {
+  padding: 5px;
+  color: #5e5243;
+}
+/* End of searching */
 
 /* Movies count */
 .movies_count {
