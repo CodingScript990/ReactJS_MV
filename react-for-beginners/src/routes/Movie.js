@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "./Movie.module.css";
 
 // rendering
-function Movie({ id, coverImg, title, year, summary, genres }) {
+function Movie({ id, coverImg, title, year }) {
   // props
   return (
     // movie container
@@ -16,21 +16,10 @@ function Movie({ id, coverImg, title, year, summary, genres }) {
           <Link className={styled.movie_url} to={`/movie/${id}`}>
             {title}
           </Link>
+          <span className={styled.movie_year}>{year}</span>
         </h2>
-        <h3 className={styled.movie_year}>{year}</h3>
       </div>
       {/* End of movie item */}
-
-      {/* movie decoration */}
-      <div className={styled.movie_decoration}>
-        <p>{summary.length > 120 ? `${summary.slice(0, 120)}...` : summary}</p>
-        <ul className={styled.movie_genres}>
-          {genres.map((g) => (
-            <li key={g}>{g}</li>
-          ))}
-        </ul>
-      </div>
-      {/* End of movie decoration */}
     </div>
     // End of movie container
   );
@@ -41,9 +30,7 @@ Movie.propsTypes = {
   id: PropsTypes.number.isRequired,
   coverImg: PropsTypes.string.isRequired,
   title: PropsTypes.string.isRequired,
-  summary: PropsTypes.string.isRequired,
   year: PropsTypes.number.isRequired,
-  genres: PropsTypes.arrayOf(PropsTypes.string).isRequired,
 };
 
 export default Movie;

@@ -1,0 +1,54 @@
+/* Details css */
+
+/* Container */
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+/* End of Container */
+
+/* Info */
+.info {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* Info Img */
+.info_img {
+  width: 100%;
+  height: 100%;
+  background-color: #5e5243;
+}
+
+.info_img img {
+  width: 100%;
+  max-width: 250px;
+  
+}
+/* End of Info Img */
+/* End of Info */
+
+/* Title */
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateY(20%);
+}
+
+.title h1 a {
+  text-decoration: none;
+  font-size: 43px;
+  color: #5e5243;
+  font-family: 'Pacifico', cursive;
+  cursor: cursor;
+  transform: translateY(15.5%);
+}
+
+/* End of Title */
+
+/* End of Details css */

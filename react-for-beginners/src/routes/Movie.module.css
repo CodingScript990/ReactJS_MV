@@ -2,9 +2,10 @@
 
 /* movie container */
 .movie {
-  width: 550px;
+  width: 100%;
   height: 350px;
   display: flex;
+  margin: 0 auto;
 }
 
 /* End of movie container */
@@ -19,7 +20,7 @@
 .movie_img {
   position: relative;
   width: 100%;
-  max-width: 200px;
+  max-width: 170px;
   border-radius: 8px;
   transition: transform .5s;
 }
@@ -50,7 +51,9 @@
 }
 
 .movie_year {
-  font-size: 17px;
+  font-size: 19px;
+  margin-left: 10px;
+  color: #413c37;
 }
 
 /* End of movie title & movie year */
@@ -60,7 +63,7 @@
 .movie_title a {
   margin-bottom: 5px;
   font-size: 24px;
-  color: #2c2c2c;
+  color: #3d3834;
   text-decoration: none;
 }
 /* End of movie title a tag */

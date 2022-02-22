@@ -19,18 +19,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  transform: translateY(20%);
 }
 
-.title h1 {
-  font-size: 42px;
+.title h1 a {
+  text-decoration: none;
+  font-size: 43px;
   color: #5e5243;
   font-family: 'Pacifico', cursive;
-  cursor: default;
-  margin: 5px;
-}
-
-.title a {
-  text-decoration: none;
+  cursor: cursor;
 }
 
 /* End of Title */
@@ -75,16 +72,18 @@
 /* Movies Area */
 .movies {
   display: grid;
-  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
   grid-gap: 50px;
   padding: 20px;
   width: 80%;
+  height: 100%;
   margin: 0 auto;
   text-align: center;
   background-color: #867b6c;
   border: 1px solid #5e5243;
   border-radius: 7px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 /*  */
@@ -98,10 +97,11 @@
 }
 
 /* movies length */
-.movies_length {
+.movies_view {
   font-size: 21px;
   font-weight: bold;
   color: #5e5243;
+  text-decoration: none;
 }
 
 /* End of movies length */
